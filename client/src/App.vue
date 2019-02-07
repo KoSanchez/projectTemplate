@@ -5,6 +5,7 @@
         <div class="navbar-start">
           <router-link class="navbar-item is-tab" to="/" exact-active-class="is-active">Home</router-link>
           <router-link class="navbar-item is-tab" to="/about" exact-active-class="is-active">About</router-link>
+          <router-link class="navbar-item is-tab" to="/todos" exact-active-class="is-active">ToDos</router-link>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -82,13 +83,13 @@ export default class App extends Vue {
   }
 
   logout() {
-    debugger;
     axios
       .post(APIConfig.buildUrl("/logout"), null, {
         headers: { token: this.$store.state.userToken }
       })
       .then(() => {
         this.$store.commit("logout");
+        this.$router.push({ name: "home" });
       });
   }
 }
