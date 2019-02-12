@@ -1,11 +1,11 @@
 <template>
     <div class="todos">
         <div> Hi from todos</div>
-    
+
         <!--actual to do list -->
         <!--group the box with todo item-->
         <div v-for="(todo, index) in mytodos" v-bind:key="index">
-            <span>{{ todo.name }}</span> 
+            <span>{{ todo.name }}</span>
             <span>{{ todo.duedate }}</span>
             <button class="button" v-on:click="deleteTodoItem(todo.id)"> Delete </button>
         </div>
@@ -39,7 +39,7 @@ interface ToDo {
 }
 </script>
 
-<style scoped>        
+<style scoped>
         /*ul {
           list-style: none;
           position: relative;
