@@ -27,6 +27,7 @@
 </template>
 
 <script lang="ts">
+import axios, { AxiosError, AxiosResponse } from "axios";
 import Vue from 'vue';
 import { Component } from "vue-property-decorator";
 @Component
@@ -38,6 +39,7 @@ export default class ToDos extends Vue {
         { name: "todo three", duedate: undefined, id: this.idVal++}
     ];
     addTodoItem(message: string, due_date: Date) {
+        axios
         this.mytodos.push({name: message, duedate: due_date, id: this.idVal++});
     }
     deleteTodoItem(id: number) {
