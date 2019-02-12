@@ -41,7 +41,7 @@ export class ToDoController extends DefaultController {
       todoRepo.findOneOrFail(req.params.id).then((foundToDo: ToDo) => {
         foundToDo.complete = req.body.complete;
         todoRepo.remove(foundToDo).then(() => {
-          res.status(200).send({ foundToDo });
+          res.send(200).send({ foundToDo });
         });
       });
     });
