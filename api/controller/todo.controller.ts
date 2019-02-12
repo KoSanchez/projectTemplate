@@ -36,7 +36,7 @@ export class ToDoController extends DefaultController {
         });
       });
     });
-    router.route("/todos/:id").delete((req: Request, res: Response) =>{
+    /*router.route("/todos/:id").delete((req: Request, res: Response) =>{
       const todoRepo = getRepository(ToDo);
       todoRepo.findOneOrFail(req.params.id).then((foundToDo: ToDo) => {
         foundToDo.complete = req.body.complete;
@@ -44,7 +44,7 @@ export class ToDoController extends DefaultController {
           res.send(200).send({ foundToDo });
         });
       });
-    });
+    });*/
     return router;
   }
 }
